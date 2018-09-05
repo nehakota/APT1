@@ -6,28 +6,32 @@ public class DNAMaxNucleotide {
         int len = 0;
         String ans = "";
         for (int k=0; k<strands.length; k++) {
+        		int count = 0;
     	   		for (int j=0; j<strands[k].length(); j++) {
-    	   			int count = 0;
+    	   			
+    	   			int alen = strands[k].length();
     	   			if (strands[k].charAt(j) == compare) {
     	   				count ++;
-    	   				int alen = strands[k].length();
-    	   				if(count==m) {
-    	   					if(alen>len) {
-    	   						len = alen;
-    	   						m = count;
-    	   						ans = strands[k];
-    	   					}
+    	   				if (count>m){
+        	   				len = alen;
+        	   				m = count;
+        	   				ans = strands[k];
+        	   				}
+        	   			if(count==m) {
+        	   				if(alen>len) {
+        	   					len = alen;
+        	   					m = count;
+        	   					ans = strands[k];
+        	   					}
+        	   				}
     	   				}
-    	   				else if (count>m){
-    	   					len = alen;
-    	   					m = count;
-    	   					ans = strands[k];
-    	   					
-    	   				}
+    	   			
+    	   			
     	   			}
     	   		}
-  }
-       return ans;
+       
+        
+        return ans;
+	}
 }
-	
-}
+
